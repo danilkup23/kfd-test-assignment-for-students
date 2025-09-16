@@ -1,23 +1,22 @@
-package biti.danilkup23.view.items.books_management;
+package biti.danilkup23.view.items.entries_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
 
-
-public class GetAllBooksItem implements MenuItem {
+public class GetAllEntriesItem implements MenuItem {
     private LibraryController libraryController;
 
-    public GetAllBooksItem(LibraryController libraryController) {
+    public GetAllEntriesItem(LibraryController libraryController) {
         this.libraryController = libraryController;
     }
 
     @Override
     public void execute() {
-        libraryController.getBookController().getAllBooks();
+        libraryController.getEntryController().getAll();
     }
 
     @Override
     public String getDescription() {
-        return "Print information about all books";
+        return "Print information of all entries";
     }
 }

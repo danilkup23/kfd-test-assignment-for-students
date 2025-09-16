@@ -1,4 +1,4 @@
-package biti.danilkup23.view.items.books_management;
+package biti.danilkup23.view.items.users_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
@@ -6,22 +6,22 @@ import biti.danilkup23.view.utils.InputValidatorUtil;
 
 import java.util.Scanner;
 
-public class GetBookByIsbn implements MenuItem {
+public class RemoveUserByIdItem implements MenuItem {
     private LibraryController libraryController;
     private final Scanner scanner = new Scanner(System.in);
 
-    public GetBookByIsbn(LibraryController libraryController) {
+    public RemoveUserByIdItem(LibraryController libraryController) {
         this.libraryController = libraryController;
     }
 
     @Override
     public void execute() {
-        String isbn = InputValidatorUtil.getValidatedString("Please enter a ISBN", "ISBN", scanner);
-        libraryController.getBookController().getBookByIsbn(isbn);
+        int id = InputValidatorUtil.getValidatedInteger("Please enter a user id", "User id", scanner);
+        libraryController.getUserController().removerUserById(id);
     }
 
     @Override
     public String getDescription() {
-        return "Print a information of book by ISBN";
+        return "Delete user by id";
     }
 }

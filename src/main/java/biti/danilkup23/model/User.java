@@ -38,6 +38,7 @@ abstract public class User {
         if (type == null || type.trim().isEmpty()) {
             throw new IllegalArgumentException("The type cannot be empty!");
         }
+        this.type = type;
     }
 
     public void setFirstName(String firstName) {

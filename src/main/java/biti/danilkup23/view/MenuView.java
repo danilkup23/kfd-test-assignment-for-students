@@ -14,8 +14,8 @@ public class MenuView extends AbstractMenuManager{
         this.libraryController = libraryController;
 
         menuItems.put(1, new BookManager(libraryController));
-        menuItems.put(2, new UserManager());
-        menuItems.put(3, new EntryManager());
+        menuItems.put(2, new UserManager(libraryController));
+        menuItems.put(3, new EntryManager(libraryController));
         menuItems.put(0, new ExitMenuItem(this));
     }
 

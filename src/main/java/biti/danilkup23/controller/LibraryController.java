@@ -13,7 +13,7 @@ public class LibraryController {
         return entryController;
     }
 
-    public UserController userController() {
+    public UserController getUserController() {
         return userController;
     }
 }

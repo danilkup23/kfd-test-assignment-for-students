@@ -6,22 +6,22 @@ import biti.danilkup23.view.utils.InputValidatorUtil;
 
 import java.util.Scanner;
 
-public class GetBookById implements MenuItem {
+public class GetBookByIsbnItem implements MenuItem {
     private LibraryController libraryController;
     private final Scanner scanner = new Scanner(System.in);
 
-    public GetBookById(LibraryController libraryController) {
+    public GetBookByIsbnItem(LibraryController libraryController) {
         this.libraryController = libraryController;
     }
 
     @Override
     public void execute() {
-        int id = InputValidatorUtil.getValidatedInteger("Please enter a id of book", "Book id", scanner);
-        libraryController.getBookController().getBookById(id);
+        String isbn = InputValidatorUtil.getValidatedString("Please enter a ISBN", "ISBN", scanner);
+        libraryController.getBookController().getBookByIsbn(isbn);
     }
 
     @Override
     public String getDescription() {
-        return "Print information of book by id";
+        return "Print a information of book by ISBN";
     }
 }

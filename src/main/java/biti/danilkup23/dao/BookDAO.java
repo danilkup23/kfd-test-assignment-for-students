@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookDAO implements DAO<Book>{
-    private static final String ADD_BOOK_QUERY = "INSERT INTO books(book_title, book_author_name, book_writing_year, book_isbn, is_available) VALUES(?, ?, ?, ?, ?);";
-
     @Override
     public Book get(int id) throws SQLException {
         Book book = null;
@@ -65,7 +63,7 @@ public class BookDAO implements DAO<Book>{
     @Override
     public void add(Book book) throws SQLException {
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(ADD_BOOK_QUERY)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.ADD_BOOK.getQuery())) {
 
             preparedStatement.setString(1, book.getTitle());
             preparedStatement.setString(2, book.getAuthorName());

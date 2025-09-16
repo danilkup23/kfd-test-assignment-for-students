@@ -40,13 +40,40 @@ public class InputValidatorUtil {
 
         while (true) {
             System.out.print(prompt + " >> ");
-            input = scanner.next().trim();
-            if (input.equals("Yes")) break;
-            else if (input.equals("No")) status = false;
+            input = scanner.nextLine().trim();
+            if (input.equalsIgnoreCase("Yes")) break;
+            else if (input.equalsIgnoreCase("No")) {
+                status = false;
+                break;
+            }
             else System.out.println(fieldName + " must be like Yes/No");
         }
 
         return status;
     }
+
+    public static String getValidatedType(String prompt, String fieldName, Scanner scanner) {
+        String input;
+
+        while (true) {
+            System.out.print(prompt + " >> ");
+            input = scanner.nextLine().trim();
+            if (input.equalsIgnoreCase("STUDENT") || input.equalsIgnoreCase("GUEST") || input.equalsIgnoreCase("FACULTY")) break;
+        }
+
+        return input;
+    }
+
+//    public static String getValidatedLocalDate(String prompt, String fieldName, Scanner scanner) {
+//        String input;
+//
+//        while (true) {
+//            System.out.print(prompt + " >> ");
+//            input = scanner.nextLine().trim();
+//
+//        }
+//
+//        return input;
+//    }
 
 }
