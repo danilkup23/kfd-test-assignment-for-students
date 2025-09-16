@@ -1,4 +1,4 @@
-package entities;
+package biti.danilkup23.model;
 
 import java.time.LocalDate;
 
@@ -7,18 +7,20 @@ public class Book {
     private String title;
     private String authorName;
     private int writingYear;
-    private long ISBN;
+    private String isbn;
+    private boolean isAvailable;
 
-    public Book(int id, String title, String authorName, int writingYear, long ISBN) {
-        this.id = id;  
+    public Book(int id, String title, String authorName, int writingYear, String ISBN, boolean isAvailable) {
+        this.id = id;
         setTitle(title);
         setAuthorName(authorName);
         setWritingYear(writingYear);
-        setISBN(ISBN);
-    } 
-    
+        setIsbn(ISBN);
+        setIsAvailable(isAvailable);
+    }
+
     public int getId() {
-        return id;  
+        return id;
     }
 
     public String getTitle() {
@@ -33,8 +35,12 @@ public class Book {
         return writingYear;
     }
 
-    public long getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public boolean getIsAvailable() {
+        return isAvailable;
     }
 
     public void setTitle(String title) {
@@ -42,7 +48,7 @@ public class Book {
             throw new IllegalArgumentException("The title of the book cannot be empty!");
         }
         this.title = title.trim();
-    } 
+    }
 
     public void setAuthorName(String authorName) {
         if (authorName == null || authorName.trim().isEmpty()) {
@@ -55,13 +61,15 @@ public class Book {
         int currentYear = LocalDate.now().getYear();
         if (writingYear < 0 || writingYear > currentYear) {
             throw new IllegalArgumentException("Illegal writing year of the book!");
-        } 
-        this.writingYear = writingYear;   
+        }
+        this.writingYear = writingYear;
     }
 
-    public void setISBN(long ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
-
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
 }
