@@ -37,5 +37,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
+
 /src/main/java/biti/danilkup23/data/
 /out/
+/.idea/

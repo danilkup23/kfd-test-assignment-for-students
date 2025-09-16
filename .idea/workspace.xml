@@ -5,53 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd48844e-2834-4305-b6a7-ee07a15f558f" name="Changes" comment="Modified project">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/kfd-test-assignment-for-students/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/kfd-test-assignment-for-students/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/kfd-test-assignment-for-students/resources/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/kfd-test-assignment-for-students/resources/library.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/kfd-test-assignment-for-students/sqlite3.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/controller/EntryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/controller/LibraryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/BookDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/EntryDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/LibraryDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/utils/DAOUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/utils/DatabaseConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/utils/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/dao/utils/SQLQueries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/Faculty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/Guest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/AbstractMenuManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/MenuView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/ExitMenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/books_management/AddBookItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/books_management/BookManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/books_management/GetAllBooksItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/books_management/GetBookById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/books_management/RemoveBookById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/entries_management/EntryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/items/users_management/UserManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/view/utils/InputValidatorUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/library.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_TASK.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/biti/danilkup23/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +77,23 @@
       <option name="presentableId" value="Default" />
       <updated>1757665458488</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modified project">
+      <option name="closed" value="true" />
+      <created>1758033610536</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758033610536</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modified project">
+      <option name="closed" value="true" />
+      <created>1758033664000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758033664000</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
