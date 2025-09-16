@@ -1,7 +1,5 @@
 package biti.danilkup23.controller;
 
-import biti.danilkup23.dao.LibraryDAO;
-
 public class LibraryController {
     private final BookController bookController = new BookController();
     private final EntryController entryController = new EntryController();
