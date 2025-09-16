@@ -19,11 +19,9 @@ public class BookDAO implements DAO<Book>{
         Book book = null;
 
         try (Connection connection = DatabaseConnector.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_ID.getQuery())) {
+        PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_BOOK_ID.getQuery())) {
 
-            preparedStatement.setString(1, "books");
-            preparedStatement.setString(2, "book_id");
-            preparedStatement.setInt(3, id);
+            preparedStatement.setInt(1, id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -45,9 +43,8 @@ public class BookDAO implements DAO<Book>{
         List<Book> books = new ArrayList<>();
 
         try(Connection connection = DatabaseConnector.getConnection();
-           PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL.getQuery())) {
+           PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL_BOOKS.getQuery())) {
 
-            preparedStatement.setString(1, "books");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -83,13 +80,34 @@ public class BookDAO implements DAO<Book>{
     @Override
     public void removeById(int id) throws SQLException {
         try (Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_ID.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_BOOK_ID.getQuery())) {
 
-            preparedStatement.setString(1, "books");
-            preparedStatement.setString(2, "book_id");
-            preparedStatement.setInt(3, id);
+            preparedStatement.setInt(1, id);
 
             preparedStatement.executeUpdate();
         }
+    }
+    
+    public Book getBookByIsbn(String isbn) throws SQLException {
+        Book book = null;
+
+        try (Connection connection = DatabaseConnector.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BOOK_BY_ISBN.getQuery())) {
+
+            preparedStatement.setString(1, isbn);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            book = new Book(
+                    resultSet.getInt("book_id"),
+                    resultSet.getString("book_title"),
+                    resultSet.getString("book_author_name"),
+                    resultSet.getInt("book_writing_year"),
+                    resultSet.getString("book_isbn"),
+                    resultSet.getBoolean("is_available")
+            );
+        }
+
+        return book;
     }
 }

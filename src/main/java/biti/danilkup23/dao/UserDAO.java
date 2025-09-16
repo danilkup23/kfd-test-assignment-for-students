@@ -20,7 +20,7 @@ public class UserDAO implements DAO<User> {
         User user = null;
 
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_ID.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_BOOK_ID.getQuery())) {
 
             preparedStatement.setString(1, "users");
             preparedStatement.setString(2, "user_id");
@@ -38,7 +38,7 @@ public class UserDAO implements DAO<User> {
         List<User> users = new ArrayList<>();
 
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL_BOOKS.getQuery())) {
 
             preparedStatement.setString(1, "users");
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -66,7 +66,7 @@ public class UserDAO implements DAO<User> {
     @Override
     public void removeById(int id) throws SQLException {
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_ID.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_BOOK_ID.getQuery())) {
             preparedStatement.setString(1, "users");
             preparedStatement.setString(2, "user_id");
             preparedStatement.setInt(3, id);

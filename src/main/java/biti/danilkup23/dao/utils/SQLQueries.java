@@ -34,11 +34,14 @@ public enum SQLQueries {
     );
     """),
 
-    GET_BY_ID("SELECT * FROM ? WHERE (? = ?);"),
+    GET_BY_BOOK_ID("SELECT * FROM books WHERE (book_id = ?);"),
+    GET_ALL_BOOKS("SELECT * FROM books;"),
+    REMOVE_BY_BOOK_ID("DELETE FROM books WHERE (book_id = ?);"),
+    GET_BOOK_BY_ISBN("SELECT * from books WHERE (book_isbn = ?);"),
 
-    GET_ALL("SELECT * FROM ?;"),
+    GET_ALL_USERS("SELECT * from users"),
 
-    REMOVE_BY_ID("DELETE FROM ? WHERE (? = ?);");
+    GET_ALL_ENTRIES("SELECT * from entries");
 
     private final String query;
 

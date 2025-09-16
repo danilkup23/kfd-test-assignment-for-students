@@ -21,7 +21,7 @@ public class EntryDAO implements DAO<Entry> {
         Entry entry = null;
 
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_ID.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BY_BOOK_ID.getQuery())) {
 
             preparedStatement.setString(1, "entries");
             preparedStatement.setString(2, "entry_id");
@@ -45,7 +45,7 @@ public class EntryDAO implements DAO<Entry> {
         List<Entry> entries = new ArrayList<>();
 
         try(Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_ALL_BOOKS.getQuery())) {
 
             preparedStatement.setString(1, "entries");
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -80,7 +80,7 @@ public class EntryDAO implements DAO<Entry> {
     @Override
     public void removeById(int id) throws SQLException {
         try (Connection connection = DatabaseConnector.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_ID.getQuery())) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.REMOVE_BY_BOOK_ID.getQuery())) {
 
             preparedStatement.setString(1, "entries");
             preparedStatement.setString(2, "entry_id");

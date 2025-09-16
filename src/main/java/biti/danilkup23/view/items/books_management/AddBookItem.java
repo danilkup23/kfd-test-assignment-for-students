@@ -21,8 +21,8 @@ public class AddBookItem implements MenuItem {
         String authorName = InputValidatorUtil.getValidatedString("Please enter a author's name", "Author's name", scanner);
         int writingYear = InputValidatorUtil.getValidatedInteger("Please enter book writing year", "Writing year", scanner);
         String isbn = InputValidatorUtil.getValidatedString("Please enter ISBN", "ISBN", scanner);
-        boolean isAvaliable = InputValidatorUtil.getValidatedBoolean("Please enter avaliable status (Yes/No)", "Avaliable status", scanner);
-        libraryController.getBookController().addBook(title, authorName, writingYear, isbn, isAvaliable);
+        boolean isAvailable = InputValidatorUtil.getValidatedBoolean("Please enter available status (Yes/No)", "Available status", scanner);
+        libraryController.getBookController().addBook(title, authorName, writingYear, isbn, isAvailable);
     }
 
     @Override
