@@ -1,9 +1,0 @@
-.DS_Store
-.idea/
-*.iml
-target/
-*.class
-*.jar
-*.war
-*.ear
-*.log
