@@ -1,5 +1,6 @@
 package biti.danilkup23.dao.utils;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -26,6 +27,12 @@ public class DatabaseConnector {
     }
 
     private static void initDatabase() {
+        File currentDir = new File(System.getProperty("user.dir"));
+        File dataDirectory = new File(currentDir, "src/main/java/biti/danilkup23/data");
+
+        if (!dataDirectory.isDirectory()) {
+            dataDirectory.mkdirs();
+        }
         try(var statement = getConnection().createStatement()) {
             statement.execute(SQLQueries.TABLE_BOOKS.getQuery());
             statement.execute(SQLQueries.TABLE_USERS.getQuery());
