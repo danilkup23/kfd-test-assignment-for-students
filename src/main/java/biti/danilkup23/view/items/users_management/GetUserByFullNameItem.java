@@ -2,7 +2,7 @@ package biti.danilkup23.view.items.users_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 
 import java.util.Scanner;
 
@@ -16,8 +16,8 @@ public class GetUserByFullNameItem implements MenuItem {
 
     @Override
     public void execute() {
-        String firstName = InputValidatorUtil.getValidatedString("Please enter a name", "Name", scanner);
-        String lastName = InputValidatorUtil.getValidatedString("Please enter a surname", "Surname", scanner);
+        String firstName = InputUtil.getValidatedString("Please enter a name", "Name", scanner);
+        String lastName = InputUtil.getValidatedString("Please enter a surname", "Surname", scanner);
         libraryController.getUserController().getUserByFullName(firstName, lastName);
     }
 

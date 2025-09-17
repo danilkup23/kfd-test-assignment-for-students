@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 import biti.danilkup23.view.items.MenuItem;
 
 public abstract class AbstractMenuManager implements MenuItem {
@@ -23,7 +23,7 @@ public abstract class AbstractMenuManager implements MenuItem {
                 System.out.println(menuItem.getKey() + ". " + menuItem.getValue().getDescription());
             }
 
-            int choice = InputValidatorUtil.getValidatedInteger("Please input a choice", "Choice", scanner);
+            int choice = InputUtil.getValidatedInteger("Please input a choice", "Choice", scanner);
 
 
             menuItems.get(choice).execute();

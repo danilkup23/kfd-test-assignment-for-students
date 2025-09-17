@@ -6,23 +6,23 @@ import biti.danilkup23.view.utils.InputUtil;
 
 import java.util.Scanner;
 
-public class RemoveEntryByIdItem implements MenuItem {
+public class GetBorrowedBooksByTitle implements MenuItem {
     private LibraryController libraryController;
     private final Scanner scanner = new Scanner(System.in);
 
-    public RemoveEntryByIdItem(LibraryController libraryController) {
+    public GetBorrowedBooksByTitle(LibraryController libraryController) {
         this.libraryController = libraryController;
     }
 
 
     @Override
     public void execute() {
-        int id = InputUtil.getValidatedInteger("Please enter entry id", "Entry id", scanner);
-        libraryController.getEntryController().removeEntryById(id);
+        String title = InputUtil.getValidatedString("Please enter a book title", "Book title", scanner);
+        libraryController.getEntryController().getBorrowedBooksByTitle(title);
     }
 
     @Override
     public String getDescription() {
-        return "Remove entry by id";
+        return "Print borrowed books by title";
     }
 }

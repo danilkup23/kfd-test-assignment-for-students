@@ -2,7 +2,7 @@ package biti.danilkup23.view.items.users_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class RemoveUserByIdItem implements MenuItem {
 
     @Override
     public void execute() {
-        int id = InputValidatorUtil.getValidatedInteger("Please enter a user id", "User id", scanner);
+        int id = InputUtil.getValidatedInteger("Please enter a user id", "User id", scanner);
         libraryController.getUserController().removerUserById(id);
     }
 

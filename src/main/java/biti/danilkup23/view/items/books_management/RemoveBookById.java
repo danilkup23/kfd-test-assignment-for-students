@@ -2,7 +2,7 @@ package biti.danilkup23.view.items.books_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class RemoveBookById implements MenuItem {
 
     @Override
     public void execute() {
-        int id = InputValidatorUtil.getValidatedInteger("Please enter the id to remove book", "Book id", scanner);
+        int id = InputUtil.getValidatedInteger("Please enter the id to remove book", "Book id", scanner);
         libraryController.getBookController().removeBookById(id);
     }
 

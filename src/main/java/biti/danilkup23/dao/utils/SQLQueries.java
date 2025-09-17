@@ -58,11 +58,11 @@ public enum SQLQueries {
     REMOVE_BY_ENTRY_ID("DELETE FROM entries WHERE (entry_id = ?);"),
     GET_BORROWED_BOOKS_BY_TITLE("""
             SELECT user_first_name, user_last_name, borrow_date, return_date FROM entries, books, users
-            WHERE (books.book_id = entries.book_id AND books.book_title = ?);
+            WHERE (books.book_id = entries.book_id AND users.user_id = entries.user_id AND books.book_title = ?);
     """),
     GET_BORROWED_BOOKS_BY_USER_ID("""
             SELECT book_title, user_first_name, user_last_name, borrow_date, return_date FROM entries, books, users
-            WHERE (entries.user_id = ?);
+            WHERE (entries.book_id = books.book_id AND users.user_id = entries.user_id AND entries.user_id = ?);
     """);
 
     //TODO: add query which calculate a difference between borrow and return date, compare result with max days

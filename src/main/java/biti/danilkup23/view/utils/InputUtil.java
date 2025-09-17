@@ -1,8 +1,10 @@
 package biti.danilkup23.view.utils;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
-public class InputValidatorUtil {
+public class InputUtil {
     public static String getValidatedString(String prompt, String fieldName, Scanner scanner) {
         String input;
         do {
@@ -64,16 +66,41 @@ public class InputValidatorUtil {
         return input;
     }
 
-//    public static String getValidatedLocalDate(String prompt, String fieldName, Scanner scanner) {
-//        String input;
-//
-//        while (true) {
-//            System.out.print(prompt + " >> ");
-//            input = scanner.nextLine().trim();
-//
-//        }
-//
-//        return input;
-//    }
+    public static LocalDate getValidatedLocalDate(String prompt, String fieldName, Scanner scanner) {
+        LocalDate date = null;
+
+        while (true) {
+            System.out.print(prompt + " >> ");
+            String input = scanner.nextLine().trim();
+
+            if (input.isEmpty()) {
+                System.out.println(fieldName + " must not be empty. Please use format YYYY.MM.DD");
+                continue;
+            }
+
+            String[] dateSlices = input.split("\\.");
+
+            if (dateSlices.length != 3) {
+                System.out.println("Invalid format");
+                continue;
+            }
+
+            try {
+                int year = Integer.parseInt(dateSlices[2]);
+                int month = Integer.parseInt(dateSlices[1]);
+                int day = Integer.parseInt(dateSlices[0]);
+
+                date = LocalDate.of(year, month, day);
+                break;
+
+            } catch (NumberFormatException e) {
+                System.out.println("All parts must be numbers. Please use format YYYY.MM.DD");
+            } catch (DateTimeException e) {
+                System.out.println("This date doesn't exist. Try again.");
+            }
+        }
+
+        return date;
+    }
 
 }

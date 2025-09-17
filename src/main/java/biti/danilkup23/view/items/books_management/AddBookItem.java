@@ -2,10 +2,9 @@ package biti.danilkup23.view.items.books_management;
 
 import java.util.Scanner;
 
-import biti.danilkup23.controller.BookController;
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 
 public class AddBookItem implements MenuItem {
     private LibraryController libraryController;
@@ -17,11 +16,11 @@ public class AddBookItem implements MenuItem {
 
     @Override
     public void execute() {
-        String title = InputValidatorUtil.getValidatedString("Please enter a title", "Title", scanner);
-        String authorName = InputValidatorUtil.getValidatedString("Please enter a author's name", "Author's name", scanner);
-        int writingYear = InputValidatorUtil.getValidatedInteger("Please enter book writing year", "Writing year", scanner);
-        String isbn = InputValidatorUtil.getValidatedString("Please enter ISBN", "ISBN", scanner);
-        boolean isAvailable = InputValidatorUtil.getValidatedBoolean("Please enter available status (Yes/No)", "Available status", scanner);
+        String title = InputUtil.getValidatedString("Please enter a title", "Title", scanner);
+        String authorName = InputUtil.getValidatedString("Please enter a author's name", "Author's name", scanner);
+        int writingYear = InputUtil.getValidatedInteger("Please enter book writing year", "Writing year", scanner);
+        String isbn = InputUtil.getValidatedString("Please enter ISBN", "ISBN", scanner);
+        boolean isAvailable = InputUtil.getValidatedBoolean("Please enter available status (Yes/No)", "Available status", scanner);
         libraryController.getBookController().addBook(title, authorName, writingYear, isbn, isAvailable);
     }
 

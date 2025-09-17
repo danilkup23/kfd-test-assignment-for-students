@@ -2,7 +2,7 @@ package biti.danilkup23.view.items.books_management;
 
 import biti.danilkup23.controller.LibraryController;
 import biti.danilkup23.view.items.MenuItem;
-import biti.danilkup23.view.utils.InputValidatorUtil;
+import biti.danilkup23.view.utils.InputUtil;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class GetBookByIsbnItem implements MenuItem {
 
     @Override
     public void execute() {
-        String isbn = InputValidatorUtil.getValidatedString("Please enter a ISBN", "ISBN", scanner);
+        String isbn = InputUtil.getValidatedString("Please enter a ISBN", "ISBN", scanner);
         libraryController.getBookController().getBookByIsbn(isbn);
     }
 

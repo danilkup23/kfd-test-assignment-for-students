@@ -15,6 +15,8 @@ public class EntryManager extends AbstractMenuManager {
         menuItems.put(1, new GetAllEntriesItem(libraryController));
         menuItems.put(2, new GetEntryByIdItem(libraryController));
         menuItems.put(3, new AddEntryItem(libraryController));
+        menuItems.put(4, new RemoveEntryByIdItem(libraryController));
+        menuItems.put(5, new GetBorrowedBooksByTitle(libraryController));
     }
 
 
