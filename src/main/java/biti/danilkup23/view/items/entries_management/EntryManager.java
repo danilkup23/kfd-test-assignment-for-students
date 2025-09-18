@@ -10,6 +10,7 @@ public class EntryManager extends AbstractMenuManager {
 
     public EntryManager(LibraryController libraryController) {
         this.libraryController = libraryController;
+        title = "--- Entry management ---";
 
         menuItems.put(0, new ExitMenuItem(this));
         menuItems.put(1, new GetAllEntriesItem(libraryController));
@@ -17,6 +18,7 @@ public class EntryManager extends AbstractMenuManager {
         menuItems.put(3, new AddEntryItem(libraryController));
         menuItems.put(4, new RemoveEntryByIdItem(libraryController));
         menuItems.put(5, new GetBorrowedBooksByTitle(libraryController));
+        menuItems.put(6, new GetBorrowedBooksByUserIdItem(libraryController));
     }
 
 

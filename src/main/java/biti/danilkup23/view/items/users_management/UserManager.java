@@ -9,6 +9,7 @@ public class UserManager extends AbstractMenuManager {
 
     public UserManager(LibraryController libraryController) {
         this.libraryController = libraryController;
+        title = "--- User management ---";
 
         menuItems.put(1, new GetAllUsersItem(libraryController));
         menuItems.put(2, new GetUserByIdItem(libraryController));

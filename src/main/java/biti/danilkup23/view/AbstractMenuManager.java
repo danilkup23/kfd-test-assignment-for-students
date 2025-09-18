@@ -8,7 +8,7 @@ import biti.danilkup23.view.utils.InputUtil;
 import biti.danilkup23.view.items.MenuItem;
 
 public abstract class AbstractMenuManager implements MenuItem {
-
+    protected String title;
     protected Map<Integer, MenuItem> menuItems = new HashMap<>();
     protected Boolean isStarting = true;
     private Scanner scanner = new Scanner(System.in);
@@ -19,6 +19,8 @@ public abstract class AbstractMenuManager implements MenuItem {
         isStarting = true;
 
         while (isStarting) {
+            System.out.println("\n" + title);
+
             for (Map.Entry<Integer, MenuItem> menuItem : menuItems.entrySet()) {
                 System.out.println(menuItem.getKey() + ". " + menuItem.getValue().getDescription());
             }

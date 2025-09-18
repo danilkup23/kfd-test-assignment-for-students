@@ -37,6 +37,7 @@ public class DatabaseConnector {
             statement.execute(SQLQueries.TABLE_BOOKS.getQuery());
             statement.execute(SQLQueries.TABLE_USERS.getQuery());
             statement.execute(SQLQueries.TABLE_ENTRIES.getQuery());
+            statement.execute(SQLQueries.FOREIGN_KEY.getQuery());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

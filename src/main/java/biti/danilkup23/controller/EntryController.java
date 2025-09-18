@@ -4,6 +4,7 @@ import biti.danilkup23.dao.BookDAO;
 import biti.danilkup23.dao.EntryDAO;
 import biti.danilkup23.dao.UserDAO;
 import biti.danilkup23.dto.BorrowedBooksDTO;
+import biti.danilkup23.dto.UserBorrowedBooksDTO;
 import biti.danilkup23.model.Entry;
 import biti.danilkup23.view.utils.PrintUtil;
 
@@ -12,8 +13,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class EntryController {
-    private final UserDAO userDAO = new UserDAO();
-    private final BookDAO bookDAO = new BookDAO();
     private final EntryDAO entryDAO = new EntryDAO();
 
     private static final String ERROR_MESSAGE = "Database throw exception. Try again.";
@@ -72,6 +71,28 @@ public class EntryController {
                 sb.append(PrintUtil.getStringDate(borrowedBooksDTO.getBorrowDate()));
                 sb.append(" | ");
                 sb.append(PrintUtil.getStringDate(borrowedBooksDTO.getReturnDate()));
+                System.out.println(sb);
+            }
+        } catch (SQLException e) {
+            System.out.println(ERROR_MESSAGE);
+        }
+    }
+
+    public void getBorrowedBooksByUserId(int id) {
+        try {
+            List<UserBorrowedBooksDTO> userBorrowedBooksDTOList = entryDAO.getBorrowedBooksByUserId(id);
+            System.out.println("Book Title | First name | Last name | Borrow date | Return date");
+            for (UserBorrowedBooksDTO userBorrowedBooksDTO : userBorrowedBooksDTOList) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(userBorrowedBooksDTO.getBookTitle());
+                sb.append(" | ");
+                sb.append(userBorrowedBooksDTO.getFirstName());
+                sb.append(" | ");
+                sb.append(userBorrowedBooksDTO.getLastName());
+                sb.append(" | ");
+                sb.append(PrintUtil.getStringDate(userBorrowedBooksDTO.getBorrowDate()));
+                sb.append(" | ");
+                sb.append(PrintUtil.getStringDate(userBorrowedBooksDTO.getReturnDate()));
                 System.out.println(sb);
             }
         } catch (SQLException e) {

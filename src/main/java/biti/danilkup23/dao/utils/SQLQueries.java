@@ -34,6 +34,8 @@ public enum SQLQueries {
     );
     """),
 
+    FOREIGN_KEY("PRAGMA foreign_keys = ON;"),
+
     GET_ALL_BOOKS("SELECT * FROM books;"),
     GET_BY_BOOK_ID("SELECT * FROM books WHERE (book_id = ?);"),
     ADD_BOOK("INSERT INTO books(book_title, book_author_name, book_writing_year, book_isbn, is_available) VALUES(?, ?, ?, ?, ?);"),

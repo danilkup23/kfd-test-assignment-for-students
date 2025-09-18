@@ -4,6 +4,7 @@ import biti.danilkup23.dao.utils.DAOUtil;
 import biti.danilkup23.dao.utils.DatabaseConnector;
 import biti.danilkup23.dao.utils.SQLQueries;
 import biti.danilkup23.dto.BorrowedBooksDTO;
+import biti.danilkup23.dto.UserBorrowedBooksDTO;
 import biti.danilkup23.model.Entry;
 import biti.danilkup23.model.User;
 import biti.danilkup23.view.utils.PrintUtil;
@@ -115,11 +116,34 @@ public class EntryDAO implements DAO<Entry> {
                     resultSet.getString("user_first_name"),
                     resultSet.getString("user_last_name"),
                     PrintUtil.getLocalDate(resultSet.getString("borrow_date")),
-                        PrintUtil.getLocalDate(resultSet.getString("return_date"))
+                    PrintUtil.getLocalDate(resultSet.getString("return_date"))
                 ));
             }
         }
 
         return borrowedBooksDTOList;
+    }
+
+    public List<UserBorrowedBooksDTO> getBorrowedBooksByUserId(int id) throws SQLException {
+        List<UserBorrowedBooksDTO> userBorrowedBooksDTOList = new ArrayList<>();
+
+        try(Connection connection = DatabaseConnector.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.GET_BORROWED_BOOKS_BY_USER_ID.getQuery())) {
+
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                userBorrowedBooksDTOList.add(new UserBorrowedBooksDTO(
+                    resultSet.getString("book_title"),
+                    resultSet.getString("user_first_name"),
+                    resultSet.getString("user_last_name"),
+                    PrintUtil.getLocalDate(resultSet.getString("borrow_date")),
+                    PrintUtil.getLocalDate(resultSet.getString("return_date"))
+                ));
+            }
+        }
+
+        return userBorrowedBooksDTOList;
     }
 }

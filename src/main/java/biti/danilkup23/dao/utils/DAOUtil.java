@@ -11,7 +11,6 @@ import java.time.LocalDate;
 
 public class DAOUtil {
     public static User getUser(ResultSet rs) throws SQLException {
-        if (rs.next()) {
             int id = rs.getInt("user_id");
             String type = rs.getString("user_type");
             String firstName = rs.getString("user_first_name");
@@ -35,7 +34,5 @@ public class DAOUtil {
             }
 
             return user;
-        }
-        return null;
     }
 }

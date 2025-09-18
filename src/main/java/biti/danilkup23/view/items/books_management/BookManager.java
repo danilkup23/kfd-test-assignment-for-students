@@ -9,6 +9,7 @@ public class BookManager extends AbstractMenuManager {
 
     public BookManager(LibraryController libraryController) {
         this.libraryController = libraryController;
+        title = "--- Book management ---";
 
         menuItems.put(1, new GetAllBooksItem(libraryController));
         menuItems.put(2, new GetBookByIdItem(libraryController));
